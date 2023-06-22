@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Home</title>
+
+		<meta name="description" content="Free download theme onepage, clean and modern responsive for all"/>
+		<meta name="keywords" content="responsive, html5, onepage, themes, template, clean layout, free web"/>
+		
+		<link rel="stylesheet" type="text/css" href="static/assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/style-responsive.css" />				
+
+	
+		
+</head>
+
+<body>
+
+
+
+
+
+<div class="container">
+
+
+
+
+  <section class="start-page parallax-background" id="home">
+  
+    <div class="opacity" style="background-image: url(https://img.freepik.com/free-photo/vegetables-set-left-black-slate_1220-685.jpg);background-repeat: no-repeat;background-size: cover;"></div> <!-- Opacity color -->
+      <div class="content">
+        <div class="text">
+        
+          <h1>Recipe Generation from Food Images</h1><hr/>
+          
+          
+          <a href="#about-us"><div class="read-more">Read more</div></a>
+          
+        </div>
+        <div class="arrow-down"></div>
+      </div>
+  
+  </section>
+
+ 
+  
+  
+  
+    <ul class="menu-click">
+        <li><a href="/index1">HOME</a></li>
+        <li><a href="/notebook">NOTEBOOK</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/login">SIGNOUT</a></li>
+        
+    </ul>
+   
+   
+  
+  
+  <section class="menu">
+
+    <div class="menu-content">
+    
+   
+    
+      <ul id="menu">
+        <li><a href="/index1">HOME</a></li>
+        <li><a href="/notebook">NOTEBOOK</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/login">SIGNOUT</a></li>
+        
+      </ul>
+    </div>
+  
+  
+  </section>
+
+
+  
+
+    
+
+
+</div>
+
+
+<script src="{{ url_for('static', filename='main.js') }}" type="text/javascript"></script>    
+<!-- Scripts -->
+
+<script src="static/assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="static/assets/js/jquery-ui-1.10.4.min.js" type="text/javascript"></script> 
+<script src="static/assets/js/jquery.nicescroll.js"></script> 
+<script src="static/assets/js/jquery.sticky.js"></script> 
+<script src="static/assets/js/masonry.pkgd.min.js"></script> 
+<script src="static/assets/js/imagesloaded.pkgd.min.js"></script> 
+
+<script>
+$(function(){
+
+var $container = $('.grid');
+
+$container.imagesLoaded( function(){
+  $container.masonry({
+    itemSelector : 'li'
+  });
+});
+
+});
+</script>
+<script src="static/assets/js/jquery.parallax.js"></script> 	
+<script src="static/assets/js/script.js"></script> 
+
+</body>
+
+</html>

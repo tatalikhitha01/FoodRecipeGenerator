@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Home</title>
+
+		<meta name="description" content="Free download theme onepage, clean and modern responsive for all"/>
+		<meta name="keywords" content="responsive, html5, onepage, themes, template, clean layout, free web"/>
+		
+		
+		
+		
+		<link rel="stylesheet" type="text/css" href="static/assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/style-responsive.css" />				
+
+		
+</head>
+
+<body>
+
+
+
+
+
+<div class="container">
+
+
+<!-- section start-page -->
+
+  <section class="start-page parallax-background" id="home">
+  
+    <div class="opacity" style="background-image: url(https://img.freepik.com/free-photo/vegetables-set-left-black-slate_1220-685.jpg);background-repeat: no-repeat;background-size: cover;"></div> <!-- Opacity color -->
+      <div class="content">
+        <div class="text">
+        
+        
+          <h1>Recipe Generation from Food Images</h1><hr/>
+          <p>Click "Recipe" to Upload the image or Scroll Down</p>
+          
+          <a href="#about-us"><div class="read-more">Recipe</div></a>
+          
+        </div>
+        <div class="arrow-down"></div>
+      </div>
+  
+  </section>
+
+  
+    <ul class="menu-click">
+        <li><a href="/index1">Recipe-1</a></li>
+        <li><a href="/home1">Recipe-2</a></li>
+        <li><a href="/notebook">Algotithms</a></li>
+        
+        <li><a href="/login">Signout</a></li>
+        
+    </ul>
+   
+   
+  <!-- section menu -->
+  
+  <section class="menu">
+
+    <div class="menu-content">
+    
+   
+    
+      <ul id="menu">
+        <li><a href="/index1">Recipe-1</a></li>
+        <li><a href="/home1">Recipe-2</a></li>
+        <li><a href="/notebook">Algotithms</a></li>
+        <li><a href="/login">Signout</a></li>
+        
+      </ul>
+    </div>
+  
+  
+  </section>
+
+
+  <!-- section about us -->
+  
+  <section class="about-us" id="about-us">
+  
+  <div class="content">
+                <div class="col-md-4">
+                    <div class="wrapper">
+                    <div class="image">
+                        {% if img %}
+                        <img id="foodimage" onload="$(this).data('loaded', 'loaded');" src="{{ url_for('static',filename=img)}}" alt="">
+                        {% else %}
+                        <img id="foodimage" onload="$(this).data('loaded', 'loaded');" src="" alt="">
+                        
+                        {% endif %}
+                        
+      
+                    </div>
+                    <div class="content">
+                        <div class="icon text-center">
+                          <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                       
+                    </div>
+                    <br><br><br>
+                    <div id="cancel-btn">
+                        <i class="fas fa-times"></i>
+                    </div><br><br>
+                    <div class="file-name">
+                        File name here
+                    </div>
+                    </div><br><br>
+                    <button onclick="defaultBtnActive()" id="custom-btn">Upload a Food Image</button><br><br>
+                    <form id='foodimgform'action="/predict" method="POST" enctype="multipart/form-data">
+                      <input id="default-btn" type="file" hidden name="imagefile">
+                    </form>
+                    
+                </div><br><br>
+                <div id="info" class="col-md-8">
+                    <div class="card m-3">
+                        
+                        <div class="card-body" >
+                          <h5 class="card-title text-center" id=infotitle >Recipe Generation from Food Image</h5>
+                          <br>
+                          <p class="card-text" id="infobody">Upload any Food Image<br>Our Model will predict its Food Name , Ingredients and its Recipe.</p>
+                          <p class="card-text"><small class="text-muted">Processing time : Approx 40s</small></p>
+                        </div>
+                      </div>
+                </div>
+                <br><br>
+    
+                <div id="loading" style="display:none;" class="col-md-8">
+                    <div class="loader">
+                        <div class="inner one"></div>
+                        <div class="inner two"></div>
+                        <div class="inner three"></div>
+                        <h4>Loading</h4>
+                        <h5 style="padding-bottom: 25px;">Kindly wait for few seconds</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+  
+  </section>
+   <!-- Contact-->
+
+   
+
+
+</div>
+
+
+   <script src="{{ url_for('static', filename='main.js') }}" type="text/javascript"></script>    
+ <!-- Scripts -->
+	
+ <script src="static/assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+ <script src="static/assets/js/jquery-ui-1.10.4.min.js" type="text/javascript"></script> 
+ <script src="static/assets/js/jquery.nicescroll.js"></script> 
+ <script src="static/assets/js/jquery.sticky.js"></script> 
+ <script src="static/assets/js/masonry.pkgd.min.js"></script> 
+ <script src="static/assets/js/imagesloaded.pkgd.min.js"></script> 	
+
+<script>
+  $(function(){
+
+    var $container = $('.grid');
+  
+    $container.imagesLoaded( function(){
+      $container.masonry({
+        itemSelector : 'li'
+      });
+    });
+  
+  });
+</script>
+ <script src="static/assets/js/jquery.parallax.js"></script> 
+ <script src="static/assets/js/script.js"></script> 	
+
+</body>
+
+</html>

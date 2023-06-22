@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Signin</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="static/assets/assets/css/nunito-font.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="static/assets/assets/css/style.css"/>
+	<style>
+		a:link, a:visited {
+		  background-color: rgb(74, 128, 209);
+		  color: rgb(245, 243, 243);
+		  border: 2px solid rgb(235, 238, 238);
+		  padding: 10px 20px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		}
+		
+		a:hover, a:active {
+		  background-color: rgb(74, 128, 209);
+		  color: white;
+		}
+		</style>
+</head>
+<body class="form-v6">
+	<div class="page-content">
+		<div class="form-v6-content">
+			<div class="form-left">
+				<img src="static/assets/assets/images/form-v5.jpg" style="height:600px;width=500px" alt="form">
+				
+			</div>
+			<form class="form-detail" action="/signin" method="get">
+				<h2>Login Form</h2>
+				<div class="form-row">
+					<input type="text" name="user" id="full-name" class="input-text" placeholder="User Name" required>
+				</div>
+				
+				<div class="form-row">
+					<input type="password" name="password" id="password" class="input-text" placeholder="Password" required>
+				</div>
+				
+				<div class="form-row-last">
+					<input type="submit" name="register" class="register" value="Login">
+				</div>
+				<br>
+				<span style="color: black;margin-left: 10%;">Click here to Register!<a style="margin-left: 15%;" href="/logon">Signup</a></span>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

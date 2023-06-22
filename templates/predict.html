@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Home</title>
+
+		<meta name="description" content="Free download theme onepage, clean and modern responsive for all"/>
+		<meta name="keywords" content="responsive, html5, onepage, themes, template, clean layout, free web"/>
+		<meta name="author" content="Thomsoon.com"/>
+		
+		<link rel="shortcut icon" href="static/assets/img/favicon.png"> 
+		
+		<link rel="stylesheet" type="text/css" href="static/assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/style-responsive.css" />				
+
+	
+</head>
+
+<body>
+
+
+
+
+
+<div class="container">
+
+
+<!-- section start-page -->
+
+  <section class="start-page parallax-background" id="home">
+  
+    <div class="opacity" style="background-image: url(https://img.freepik.com/free-photo/vegetables-set-left-black-slate_1220-685.jpg);background-repeat: no-repeat;background-size: cover;"></div> <!-- Opacity color -->
+      <div class="content">
+        <div class="text">
+        
+        
+          <h1>Recipe Generation from Food Images</h1><hr/>
+          <p>Your recipe is ready!!! click "Check-recipe" or scroll down to know the details</p>
+          
+          <a href="#about-us"><div class="read-more">Check-recipe</div></a>
+          
+        </div>
+        <div class="arrow-down"></div>
+      </div>
+  
+  </section>
+
+  <!-- section menu mobile -->
+  
+  
+    <ul class="menu-click">
+      <li><a href="/index1">Recipe-1</a></li>
+      <li><a href="/home1">Recipe-2</a></li>
+      <li><a href="/notebook">Algorithms</a></li> 
+      <li><a href="/login">Signout</a></li>
+        
+    </ul>
+   
+   
+  <!-- section menu -->
+  
+  <section class="menu">
+
+    <div class="menu-content">
+    
+     
+    
+      <ul id="menu">
+        <li><a href="/index1">Recipe-1</a></li>
+        <li><a href="/home1">Recipe-2</a></li>
+        <li><a href="/notebook">Algorithms</a></li>
+        
+        <li><a href="/login">Signout</a></li>
+        
+      </ul>
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link " id="tabbtn1" href="#" onclick="javascript:myFunctab1()">Prediction-1</a>
+        </li>
+        
+        <li class="nav-item">
+          <a style="margin-top: -20%;" class="nav-link " id="tabbtn2" href="#" onclick="javascript:myFunctab2()">Prediction-2</a>
+        </li>
+      </ul>
+    </div>
+  
+  
+  </section>
+
+
+  <!-- section about us -->
+  
+  <section class="about-us" id="about-us">
+  
+  <div class="content">  
+
+            <div id="info"  class="col-md-8">
+                <div class="card text-center pb-2">
+                    <div class="card-header">
+                    
+                     
+                    <div id="tab1" >
+                      <div class="card-body"  align="left" id="result">
+                        <h6>Food Name :</h6>
+                        {% if title[0] != "Not a valid recipe!" %}
+                          <h5 style="font-size: x-large;color: brown;" class="card-title" align='center'>{{title[0]}}</h5>
+                          <br>
+                          <h6>Ingredients :</h6>
+                          <p style="font-size: x-large;color: blue;" class="card-text">{{', '.join(ingredients[0])}}</p>
+                          <br>
+                          <h6>Recipe :</h6>
+                          <ol class="pl-3">
+                          {% for i in recipe[0] %}
+                          <li class="card-text" style="font-size: large;">{{i}}</li>
+                          {% endfor %}
+                          </ol>
+
+                        {% else %}
+                        <h5 class="card-title" align='center'>{{title[0]}}</h5>
+                        <br>
+                        <h6 class="card-text">{{recipe[0]}}</h6>
+                        {% endif %}
+                        <br>
+                        <p class="card-text"><small class="text-muted">Check both the Recipes</small></p>
+                        <br>
+                        <h6>Other Recipe:  <a href="/index1" style="font-size: 20px; text-align: center;">"Click here to check for other recipe"</a></h6>
+                        
+                      </div>
+                    </div>
+
+
+                    <div  id="tab2" style="display:None">
+                      <div class="card-body" align="left" id="result">
+                        {% if title[1] != "Not a valid recipe!" %}
+                          <h6>Food Name:</h6>
+                          <h5 style="font-size: x-large;color: brown;" class="card-title" align='center'>{{title[1]}}</h5>
+                          <br>
+                          <h6>Ingredients :</h6>
+                          <p style="font-size: x-large;color: blue;" class="card-text">{{', '.join(ingredients[1])}}</p>
+                          <br>
+                          <h6>Recipe :</h6>
+                          <ol class="pl-3">
+                          {% for i in recipe[1] %}
+                          <li class="card-text" style="font-size: large;">{{i}}</li>
+                          {% endfor %}
+                          </ol>
+
+                        {% else %}
+                        <h5 class="card-title" align='center'>{{title[1]}}</h5>
+                        <br>
+                        <h6 class="card-text">{{recipe[1]}}</h6>
+                        {% endif %}
+                        <br>
+                        <br>
+                        <h6>Other Recipe:  <a href="/index1" style="font-size: 20px; text-align: center;">"Click here to check for other recipe"</a></h6>
+                      </div>
+                    </div>
+                    
+                  </div>
+            </div>
+<br><br><br><br>
+            <div id="loading" style="display:none;" class="col-md-8">
+              <div class="loader">
+                  <div class="inner one"></div>
+                  <div class="inner two"></div>
+                  <div class="inner three"></div>
+                  <h4>Loading</h4>
+                  <h5 style="padding-bottom: 30px;">Kindly wait for few seconds</h5>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</div>    
+<br><br><br><br>
+
+</section>
+<!-- Contact-->
+
+
+</div>
+
+
+<script src="{{ url_for('static', filename='main.js') }}" type="text/javascript"></script>    
+<!-- Scripts -->
+
+<script src="static/assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="static/assets/js/jquery-ui-1.10.4.min.js" type="text/javascript"></script> <!-- jQuery -->
+<script src="static/assets/js/jquery.nicescroll.js"></script> <!-- jQuery NiceScroll -->
+<script src="static/assets/js/jquery.sticky.js"></script> <!-- jQuery Stick Menu -->
+<script src="static/assets/js/masonry.pkgd.min.js"></script> <!-- All script -->
+<script src="static/assets/js/imagesloaded.pkgd.min.js"></script> <!-- All script -->	
+
+<script>
+$(function(){
+
+ var $container = $('.grid');
+
+ $container.imagesLoaded( function(){
+   $container.masonry({
+     itemSelector : 'li'
+   });
+ });
+
+});
+</script>
+<script src="static/assets/js/jquery.parallax.js"></script> <!-- jQuery Parallax -->	
+<script src="static/assets/js/script.js"></script> <!-- All script -->	
+
+</body>
+
+</html>

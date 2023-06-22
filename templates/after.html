@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Home</title>
+
+		<meta name="description" content="Free download theme onepage, clean and modern responsive for all"/>
+		<meta name="keywords" content="responsive, html5, onepage, themes, template, clean layout, free web"/>
+		<meta name="author" content="Thomsoon.com"/>
+		
+		<link rel="stylesheet" type="text/css" href="static/assets/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/style-responsive.css" />				
+
+	
+		
+</head>
+
+<body>
+
+
+
+
+
+<div class="container">
+
+
+<!-- section start-page -->
+
+  <section class="start-page parallax-background" id="home">
+  
+    <div class="opacity" style="background-image: url(https://img.freepik.com/free-photo/vegetables-set-left-black-slate_1220-685.jpg);background-repeat: no-repeat;background-size: cover;"></div> <!-- Opacity color -->
+      <div class="content">
+        <div class="text">
+        
+          
+        
+          <h1>Recipe Generation from Food Images</h1><hr/>
+          <p>Your recipe is ready!!! click "Check-recipe" or scroll down to know the details</p>
+          
+          <a href="#about-us"><div class="read-more">Check-recipe</div></a>
+          
+        </div>
+        <div class="arrow-down"></div>
+      </div>
+  
+  </section>
+
+  <!-- section menu mobile -->
+  
+  <section class="menu-media">
+  
+    
+   
+  </section>
+  
+    <ul class="menu-click">
+        <li><a href="/index1">Recipe-1</a></li>
+        <li><a href="/home1">Recipe-2</a></li>
+        <li><a href="/notebook">Algotithms</a></li>
+        
+        <li><a href="/login">Signout</a></li>
+        
+    </ul>
+   
+   
+  <!-- section menu -->
+  
+  <section class="menu">
+
+    <div class="menu-content">
+    
+   
+    
+      <ul id="menu">
+        <li><a href="/index1">Recipe-1</a></li>
+        <li><a href="/home1">Recipe-2</a></li>
+        <li><a href="/notebook">Algorithms</a></li>
+        
+        <li><a href="/login">Signout</a></li>
+        
+      </ul>
+    </div>
+  
+  
+  </section>
+
+
+  <!-- section about us -->
+  
+  <section class="about-us" id="about-us">
+  
+  <div class="content">
+                                    
+                                    
+        <!--<p style="font-size: xx-large;font-family: Times New Roman;font-weight: bolder;">Your Prediction!</p>-->
+        <center style="font-size: xx-large;font-family: Times New Roman;font-weight: bolder;">Heres what we had found in our prediction!!</center>
+        <br>
+        <div style="display:flex;height:100vh;flex-direction:row;justify-content: space-evenly;">
+            <div style="display:flex;flex-direction:column">
+                <div>
+                    <h3 style="font-size: xx-large;font-family: Times New Roman;font-weight: bolder;padding-bottom: 10px;">Uploaded Image:</h3>
+                    {% if img_src %}
+                    <img src="{{ img_src }}" style="height: 500px;width:600px">
+                    {% endif %}
+                </div>
+                <div>
+                    <p style="font-size: large;">Recipe Name :
+                        <span style="font-size: large; color: brown;">{{name}}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column">
+                <div>
+                    <p style="font-size: large;">Ingredients :
+                        <span style="font-size: large; color: rgb(231, 15, 15);" id="ingredients">{{ingre}}</span>
+                    </p>
+                </div>
+                <div>
+                    <p style="font-size: large;" >Cooking Style :
+                        <span style="font-size: large;text-align: left; color: rgb(81, 42, 165);">{{cook}}</span>
+                    </p>
+                </div>
+            </div>
+        
+            
+        </div>
+        <h6>Other Recipe:  <a href="/home#about-us" style="font-size: 20px; text-align: center;">"Click here to check for other recipe"</a></h6>
+        <!--<p style="font-size: x-large;">Nutritions : 
+            <span style="font-size: larger; color: rgb(165, 42, 67);">{{nutri}}</span>
+        </p> <br><br>-->
+        
+        
+        <br />
+        </div>
+</div>
+</div>
+</div>    
+                    
+                  
+                  </section>
+                   <!-- Contact-->
+                
+                   
+                
+                
+                </div>
+                
+                
+                   <script src="{{ url_for('static', filename='main.js') }}" type="text/javascript"></script>    
+                 <!-- Scripts -->
+                    
+                 <script src="static/assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+                 <script src="static/assets/js/jquery-ui-1.10.4.min.js" type="text/javascript"></script> 
+                 <script src="static/assets/js/jquery.nicescroll.js"></script> 
+                 <script src="static/assets/js/jquery.sticky.js"></script> 
+                 <script src="static/assets/js/masonry.pkgd.min.js"></script> 
+                 <script src="static/assets/js/imagesloaded.pkgd.min.js"></script> 
+                
+                 <script>
+                  $(function(){
+                
+                    var $container = $('.grid');
+                  
+                    $container.imagesLoaded( function(){
+                      $container.masonry({
+                        itemSelector : 'li'
+                      });
+                    });
+                  
+                  });
+
+                  var ing = document.getElementById("ingredients");
+                  
+                  ing.innerText = ing.innerText.split("^").join(", ");
+
+                </script>
+                 <script src="static/assets/js/jquery.parallax.js"></script> <!-- jQuery Parallax -->	
+                 <script src="static/assets/js/script.js"></script> <!-- All script -->	
+                
+                </body>
+                
+                </html>
